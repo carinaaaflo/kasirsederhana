@@ -18,20 +18,22 @@ st.write("                      Chilless Cafe                      ")
 st.write("====================== Daftar Menu ======================")
 for i in menu:
     st.write("Daftar Menu : ", i, "\t Harga : ", menu[i])
-st.wite("pembelian diatas Rp 100.000,- mendapat diskon 10%")
+st.write("seluruh menu mempunya PPN sebesar 10%")
 st.write("=========================================================")
+
 beli = st.text_input("Pilih Menu : ")
 jumlah = st.number_input("Jumlah Pesanan :")
-bayar = jumlah * menu[beli]
+harga = st.number_input(menu[i]*jumlah )
+ppn = st.number_input(harga * 0.1 )
+Bayar = st.number_input(harga+ppn)
 
-if bayar > 100000:
-    diskon = bayar*10/100
-    total = bayar - diskon
-else:
-    total = bayar
+
+
 
 st.write("====================== Detail Pembayaran ======================")
+st.write("Nama pelanggan           : ",nama)
 st.write("Menu yang dipesan        : ",beli)
 st.write("Jumlah yang dipesan      : ",jumlah)
-st.write("Total Biaya              : ",bayar)
-st.write("Total yang harus dibayar : ",total)
+st.write("PPN                      : ",ppn)
+st.write("Total Biaya              : ",Bayar)
+st.write("                TERIMA KASIH TELAH MEMESAN DI CAFE KAMI ")
